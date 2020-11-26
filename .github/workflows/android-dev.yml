@@ -1,0 +1,31 @@
+name: Development - Push and Pull Request
+
+on:
+  pull_request:
+    branches:
+      - 'dev'
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Unit tests
+        run: bash ./gradlew test --stacktrace
+
+  build:
+    run-on: ubuntu-18.04
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v2
+      - name: build the app
+        run: ./gradlew build
