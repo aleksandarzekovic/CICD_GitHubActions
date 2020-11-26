@@ -30,7 +30,7 @@ class InputAttributesTest {
     @Test
     fun inputAttributes_sendLNameAndFName_returnFullName() {
         val result = SUT.getFullName(FIRSTNAME, LASTNAME)
-        assertThat(result, `is`(FIRSTNAME))
+        assertThat(result, `is`(FULLNAME))
     }
 
     // region helper methods
