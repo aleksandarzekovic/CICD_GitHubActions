@@ -23,7 +23,7 @@ jobs:
         run: bash ./gradlew test --stacktrace
 
   build:
-    run-on: ubuntu-18.04
+    runs-on: ubuntu-18.04
     steps:
       - name: checkout the code
         uses: actions/checkout@v2
