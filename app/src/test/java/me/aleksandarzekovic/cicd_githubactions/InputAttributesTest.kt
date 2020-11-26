@@ -1,11 +1,10 @@
 package me.aleksandarzekovic.cicd_githubactions
 
+import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.hamcrest.CoreMatchers.*
-import org.junit.Assert.*
 import org.mockito.runners.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -30,8 +29,8 @@ class InputAttributesTest {
 
     @Test
     fun inputAttributes_sendLNameAndFName_returnFullName() {
-        var result = SUT.getFullName(FIRSTNAME, LASTNAME)
-        assertThat(result, `is`(FULLNAME))
+        val result = SUT.getFullName(FIRSTNAME, LASTNAME)
+        assertThat(result, `is`(FIRSTNAME))
     }
 
     // region helper methods
