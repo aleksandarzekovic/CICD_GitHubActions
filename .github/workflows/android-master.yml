@@ -56,8 +56,8 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJson: service_account.json
-          packageName: 'me.aleksandarzekovic.cicdgithubactions'
-          releaseFile: app/build/outputs/bundle/release/app-release.aab
+          packageName: 'me.aleksandarzekovic.cicd_githubactions'
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: beta
 
       - name: Notify on Slack
