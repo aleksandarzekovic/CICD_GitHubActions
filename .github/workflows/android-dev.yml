@@ -3,7 +3,7 @@ name: Development - Push Request
 on:
   push:
     branches:
-      - 'dev'
+      - '*'
       - '!master'
 
 jobs:
@@ -23,6 +23,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+
+      - name: Unit tests
+        id: unit tests
+        run: ./gradlew test --stacktrace
 
       - name: Grant rights
         run: chmod +x build.gradle
